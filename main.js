@@ -2860,8 +2860,6 @@ const randomPsalm = text => {           //function formats and divides into indi
     return [individualPsalms[Math.ceil(Math.random() * 150)],individualPsalms]
 }
 let thePsalm = randomPsalm(psalmsBulk);
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 let lastIndex = () => {
     if(thePsalm[1].indexOf(thePsalm[0])<10) {
@@ -2870,44 +2868,6 @@ let lastIndex = () => {
         return 3
     } else return 4
 }
-=======
-<<<<<<< HEAD
-=======
->>>>>>> e81df4c63b7ee56d2e0c57bfb3cc9f6eeb780c89
-let lastIndex = () => {
-    if(thePsalm[1].indexOf(thePsalm[0])<10) {
-        return 2
-    } else if(thePsalm[1].indexOf(thePsalm[0])<100) {
-        return 3
-    } else return 4
-}
-let strHeading = thePsalm[0].slice(0, thePsalm[0].indexOf(thePsalm[1].indexOf(thePsalm[0]))+lastIndex());
-let strScripture = thePsalm[0].slice(thePsalm[0].indexOf(thePsalm[1].indexOf(thePsalm[0]))+lastIndex());
-
-document.getElementsByTagName("h1")[0].innerHTML = strHeading;
-document.getElementsByTagName("p")[0].innerHTML = strScripture
-=======
-let lastIndex = () => thePsalm[1].indexOf(thePsalm[0])>=100 ? 4 : 3;
-let strHeading = thePsalm[0].slice(0, thePsalm[0].indexOf(thePsalm[1].indexOf(thePsalm[0]))+lastIndex());
-let strScripture = thePsalm[0].slice(thePsalm[0].indexOf(thePsalm[1].indexOf(thePsalm[0]))+lastIndex());
-
-/*
-let heading = document.getElementById("heading");
-let scripture = document.getElementById("psalm");
-
-let headingToAdd = document.createTextNode(strHeading);
-
-let textToAdd = document.createTextNode(strScripture);
-scripture.appendChild(textToAdd);
-heading.appendChild(headingToAdd);
-*/
-document.getElementById("heading").innerHTML = strHeading;
-document.getElementById("psalm").innerHTML = strScripture
->>>>>>> adb8fab1d878476e9d9c6a664c2eb6b6e0d672f7
-<<<<<<< HEAD
->>>>>>> e81df4c63b7ee56d2e0c57bfb3cc9f6eeb780c89
-=======
->>>>>>> e81df4c63b7ee56d2e0c57bfb3cc9f6eeb780c89
 
 let strHeading = thePsalm[0].slice(0, thePsalm[0].indexOf(thePsalm[1].indexOf(thePsalm[0]))+lastIndex());
 let strScripture = thePsalm[0].slice(thePsalm[0].indexOf(thePsalm[1].indexOf(thePsalm[0]))+lastIndex());
