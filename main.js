@@ -2861,6 +2861,7 @@ const randomPsalm = text => {           //function formats and divides into indi
 }
 let thePsalm = randomPsalm(psalmsBulk);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 let lastIndex = () => {
     if(thePsalm[1].indexOf(thePsalm[0])<10) {
@@ -2871,6 +2872,8 @@ let lastIndex = () => {
 }
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> e81df4c63b7ee56d2e0c57bfb3cc9f6eeb780c89
 let lastIndex = () => {
     if(thePsalm[1].indexOf(thePsalm[0])<10) {
         return 2
@@ -2901,6 +2904,9 @@ heading.appendChild(headingToAdd);
 document.getElementById("heading").innerHTML = strHeading;
 document.getElementById("psalm").innerHTML = strScripture
 >>>>>>> adb8fab1d878476e9d9c6a664c2eb6b6e0d672f7
+<<<<<<< HEAD
+>>>>>>> e81df4c63b7ee56d2e0c57bfb3cc9f6eeb780c89
+=======
 >>>>>>> e81df4c63b7ee56d2e0c57bfb3cc9f6eeb780c89
 
 let strHeading = thePsalm[0].slice(0, thePsalm[0].indexOf(thePsalm[1].indexOf(thePsalm[0]))+lastIndex());
