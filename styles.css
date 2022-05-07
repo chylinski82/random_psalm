@@ -1,0 +1,31 @@
+
+@font-face {
+    font-family: 'Quicksand', sans-serif;
+    src: url(/resources/fonts/Quicksand/Quicksand-VariableFont_wght.ttf);
+}
+
+body {
+    padding: 10% 15%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    max-height: 100%;
+}
+
+h1, p {
+    font-family: 'Quicksand', sans-serif;  
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+    word-spacing: 0.15em;   
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+p {
+    font-size: 24px;
+    font-weight: 500;
+    overflow: visible;
+}

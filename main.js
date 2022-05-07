@@ -2857,9 +2857,23 @@ const randomPsalm = text => {           //function formats and divides into indi
         el.toString()
     }
     
-    return individualPsalms[Math.ceil(Math.random() * 150)]
+    return [individualPsalms[Math.ceil(Math.random() * 150)],individualPsalms]
 }
+let thePsalm = randomPsalm(psalmsBulk);
+let lastIndex = () => {
+    if(thePsalm[1].indexOf(thePsalm[0])<10) {
+        return 2
+    } else if(thePsalm[1].indexOf(thePsalm[0])<100) {
+        return 3
+    } else return 4
+}
+let strHeading = thePsalm[0].slice(0, thePsalm[0].indexOf(thePsalm[1].indexOf(thePsalm[0]))+lastIndex());
+let strScripture = thePsalm[0].slice(thePsalm[0].indexOf(thePsalm[1].indexOf(thePsalm[0]))+lastIndex());
 
-console.log(randomPsalm(psalmsBulk))
+document.getElementsByTagName("h1")[0].innerHTML = strHeading;
+document.getElementsByTagName("p")[0].innerHTML = strScripture
+
+
+
 
 
