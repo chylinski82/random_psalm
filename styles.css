@@ -22,10 +22,12 @@ h1, p {
 h1 {
     font-size: 48px;
     font-weight: 700;
+    text-shadow: 2px 2px rgb(108, 228, 255);
 }
 
 p {
     font-size: 24px;
     font-weight: 500;
+    text-shadow: 1px 1px rgb(108, 228, 255);
     overflow: visible;
 }
