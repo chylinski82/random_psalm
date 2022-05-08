@@ -4,7 +4,7 @@ let background = Math.floor(Math.random()*10);
 if(mediaQuery.matches) {
     switch(background) {
         case 0:
-            document.body.style.backgroundImage = "linear-gradient(rgba(255,255,255,.65), rgba(255,255,255,.65)), url('./resources/images/portraits/p1.jpg')";
+            document.body.style.backgroundImage = "linear-gradient(rgba(255,255,255,.65), rgba(255,255,255,.65)), url('./resources/images/portraits/p1.jpg')"; 
             break;
         case 1:
             document.body.style.backgroundImage = "linear-gradient(rgba(255,255,255,.65), rgba(255,255,255,.65)), url('./resources/images/portraits/pexels-roberto-nickson-2486168.jpg')";

@@ -10,6 +10,7 @@ body {
     background-size: cover;
     background-attachment: fixed;
     max-height: 100%;
+    
 }
 
 h1, p {
@@ -22,12 +23,12 @@ h1, p {
 h1 {
     font-size: 48px;
     font-weight: 700;
-    text-shadow: 2px 2px rgb(108, 228, 255);
+    text-shadow: 3px 3px yellowgreen;
 }
 
 p {
     font-size: 24px;
     font-weight: 500;
-    text-shadow: 1px 1px rgb(108, 228, 255);
+    text-shadow: 1.5px 1.5px yellowgreen;
     overflow: visible;
 }
