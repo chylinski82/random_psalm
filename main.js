@@ -1,3 +1,5 @@
+import { loadingImage } from './images.js'
+
 let psalmsBulk = `
 [Psalm 1]
 {1:1} Blessed is the man who has not followed the counsel of the impious, and has not remained in the way of sinners, and has not sat in the chair of pestilence.
@@ -2875,5 +2877,16 @@ let strScripture = thePsalm[0].slice(thePsalm[0].indexOf(thePsalm[1].indexOf(the
 document.getElementsByTagName("h1")[0].innerHTML = strHeading;
 document.getElementsByTagName("p")[0].innerHTML = strScripture
 
+// following section hasn't been committed to git, don't know how to execute images.js within function)
+let newRandomPsalm = () => {
+    loadingImage();
+    thePsalm = randomPsalm(psalmsBulk);
+    strHeading = thePsalm[0].slice(0, thePsalm[0].indexOf(thePsalm[1].indexOf(thePsalm[0]))+lastIndex());
+    strScripture = thePsalm[0].slice(thePsalm[0].indexOf(thePsalm[1].indexOf(thePsalm[0]))+lastIndex());
+    document.getElementsByTagName("h1")[0].innerHTML = strHeading;
+    document.getElementsByTagName("p")[0].innerHTML = strScripture;
+};
 
+let wholePage = document.getElementsByTagName('body')[0];
+wholePage.addEventListener('click', newRandomPsalm)
 
