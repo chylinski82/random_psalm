@@ -2888,5 +2888,7 @@ let newRandomPsalm = () => {
 };
 
 let wholePage = document.getElementsByTagName('body')[0];
-wholePage.addEventListener('click', newRandomPsalm)
+wholePage.addEventListener('click', newRandomPsalm);
+
+randomPsalm();
 
