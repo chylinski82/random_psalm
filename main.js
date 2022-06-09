@@ -2874,8 +2874,8 @@ let lastIndex = () => {
 let strHeading = thePsalm[0].slice(0, thePsalm[0].indexOf(thePsalm[1].indexOf(thePsalm[0]))+lastIndex());
 let strScripture = thePsalm[0].slice(thePsalm[0].indexOf(thePsalm[1].indexOf(thePsalm[0]))+lastIndex());
 
-document.getElementsByTagName("h1")[0].innerHTML = strHeading;
-document.getElementsByTagName("p")[0].innerHTML = strScripture
+document.getElementById('heading').innerHTML = strHeading;
+document.getElementById('psalm').innerHTML = strScripture;
 
 // following section hasn't been committed to git, don't know how to execute images.js within function)
 let newRandomPsalm = () => {
@@ -2890,5 +2890,5 @@ let newRandomPsalm = () => {
 let wholePage = document.getElementsByTagName('body')[0];
 wholePage.addEventListener('click', newRandomPsalm);
 
-randomPsalm(psalmsBulk);
+
 
