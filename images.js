@@ -7,8 +7,6 @@ export const loadingImage = () => {
         switch(background) {
             case 0:
                 document.body.style.backgroundImage = "linear-gradient(rgba(255,255,255,.65), rgba(255,255,255,.65)), url('./resources/images/portraits/p1.jpg')"; 
-                document.querySelector('h1').style.textShadow = '3px 3px red';
-                document.querySelector('p').style.textShadow = '1.5px 1.5px red';
                 break;
             case 1:
                 document.body.style.backgroundImage = "linear-gradient(rgba(255,255,255,.65), rgba(255,255,255,.65)), url('./resources/images/portraits/pexels-roberto-nickson-2486168.jpg')";
@@ -78,6 +76,7 @@ export const loadingImage = () => {
                 break;
         } 
     }
+    
 }
 
 loadingImage();

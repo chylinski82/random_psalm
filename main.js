@@ -1,4 +1,4 @@
-import { loadingImage } from './images.js'
+import { loadingImage } from './images.js';
 
 let psalmsBulk = `
 [Psalm 1]
@@ -2840,29 +2840,32 @@ let psalmsBulk = `
 `
 
 const randomPsalm = text => {           //function formats and divides into individual Psalms one string with all Psalms
-                                        // from http://www.sacredbible.org/. Then it generates one of the Psalms at random.
+                                        // from http://www.sacredbible.org/. Then it generates one of the Psalms at random.                                       
     let separator = [];                    
     for(let i=1; i<=150; i++) {
         separator.push(`[Psalm ${i}]`)
     }
-    for(item of separator) {
-        text = text.toString().split(item)
+    for(let i=1; i<=150; i++) {
+        text = text.toString().split(separator[i])
     }
     text = text.toString().split('\n');
     text = text.filter(el => el !== ',');
     let individualPsalms = [''];
     for(let i=1; i<=150; i++) {
-        this["Psalm"+i] = '\n' + `Psalm ${i}`.toString() + '\n' + text.filter(el => el.startsWith(`\{${i}:`)).toString().replaceAll(',{', '\n').replaceAll('{', '').replaceAll('}','').replaceAll(`${i}:`, '');
-        individualPsalms.push(this["Psalm"+i]);
-    }
-    for(el of individualPsalms) {
-        el.toString()
+        let psalm;
+        psalm = '\n' + `Psalm ${i}`.toString() + '\n' + text.filter(el => el.startsWith(`\{${i}:`)).toString().replaceAll(',{', '\n').replaceAll('{', '').replaceAll('}','').replaceAll(`${i}:`, '');
+        individualPsalms.push(psalm);
     }
     
+    for(let i=1; i<=150; i++) {
+        individualPsalms[i].toString()
+    }
+
     return [individualPsalms[Math.ceil(Math.random() * 150)],individualPsalms]
 }
-let thePsalm = randomPsalm(psalmsBulk);
 
+
+let thePsalm = randomPsalm(psalmsBulk);
 let lastIndex = () => {
     if(thePsalm[1].indexOf(thePsalm[0])<10) {
         return 2
@@ -2877,14 +2880,13 @@ let strScripture = thePsalm[0].slice(thePsalm[0].indexOf(thePsalm[1].indexOf(the
 document.getElementById('heading').innerHTML = strHeading;
 document.getElementById('psalm').innerHTML = strScripture;
 
-// following section hasn't been committed to git, don't know how to execute images.js within function)
 let newRandomPsalm = () => {
     loadingImage();
     thePsalm = randomPsalm(psalmsBulk);
     strHeading = thePsalm[0].slice(0, thePsalm[0].indexOf(thePsalm[1].indexOf(thePsalm[0]))+lastIndex());
     strScripture = thePsalm[0].slice(thePsalm[0].indexOf(thePsalm[1].indexOf(thePsalm[0]))+lastIndex());
-    document.getElementsByTagName("h1")[0].innerHTML = strHeading;
-    document.getElementsByTagName("p")[0].innerHTML = strScripture;
+    document.getElementById('heading').innerHTML = strHeading;
+    document.getElementById('psalm').innerHTML = strScripture;
 };
 
 let wholePage = document.getElementsByTagName('body')[0];
