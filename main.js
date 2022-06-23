@@ -2881,7 +2881,8 @@ document.getElementById('heading').innerHTML = strHeading;
 document.getElementById('psalm').innerHTML = strScripture;
 
 let newRandomPsalm = () => {
-    loadingImage();
+    //loadingImage(); this was an alternative to window.location.reload() before i learned about it. does the same job.
+    window.location.reload();
     thePsalm = randomPsalm(psalmsBulk);
     strHeading = thePsalm[0].slice(0, thePsalm[0].indexOf(thePsalm[1].indexOf(thePsalm[0]))+lastIndex());
     strScripture = thePsalm[0].slice(thePsalm[0].indexOf(thePsalm[1].indexOf(thePsalm[0]))+lastIndex());
