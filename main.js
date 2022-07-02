@@ -2864,7 +2864,6 @@ const randomPsalm = text => {           //function formats and divides into indi
     return [individualPsalms[Math.ceil(Math.random() * 150)],individualPsalms]
 }
 
-
 let thePsalm = randomPsalm(psalmsBulk);
 let lastIndex = () => {
     if(thePsalm[1].indexOf(thePsalm[0])<10) {
@@ -2876,22 +2875,41 @@ let lastIndex = () => {
 
 let strHeading = thePsalm[0].slice(0, thePsalm[0].indexOf(thePsalm[1].indexOf(thePsalm[0]))+lastIndex());
 let strScripture = thePsalm[0].slice(thePsalm[0].indexOf(thePsalm[1].indexOf(thePsalm[0]))+lastIndex());
+document.getElementById("choose").value = thePsalm[1].indexOf(thePsalm[0]);
 
 document.getElementById('heading').innerHTML = strHeading;
 document.getElementById('psalm').innerHTML = strScripture;
 
+const selectPsalm = () => {
+    loadingImage();
+    let psalms = randomPsalm(psalmsBulk)[1];
+    let selectedPsalmIndex = document.getElementById("choose").value;
+    let lastIndex = () => {
+        if(psalms.indexOf(psalms[selectedPsalmIndex])<10) {
+            return 2
+        } else if(psalms.indexOf(psalms[selectedPsalmIndex])<100) {
+            return 3
+        } else return 4
+    }
+    strHeading = psalms[selectedPsalmIndex].slice(0, psalms[selectedPsalmIndex].indexOf(psalms.indexOf(psalms[selectedPsalmIndex]))+lastIndex());
+    strScripture = psalms[selectedPsalmIndex].slice(psalms[selectedPsalmIndex].indexOf(psalms.indexOf(psalms[selectedPsalmIndex]))+lastIndex());
+    document.getElementById('heading').innerHTML = strHeading;
+    document.getElementById('psalm').innerHTML = strScripture;
+}
+
+
 let newRandomPsalm = () => {
-    //loadingImage(); this was an alternative to window.location.reload() before i learned about it. does the same job.
-    window.location.reload();
+    loadingImage(); //this was an alternative to window.location.reload() before i learned about it. does the same job.
+    //window.location.reload();
     thePsalm = randomPsalm(psalmsBulk);
+    document.getElementById("choose").value = thePsalm[1].indexOf(thePsalm[0]);
     strHeading = thePsalm[0].slice(0, thePsalm[0].indexOf(thePsalm[1].indexOf(thePsalm[0]))+lastIndex());
     strScripture = thePsalm[0].slice(thePsalm[0].indexOf(thePsalm[1].indexOf(thePsalm[0]))+lastIndex());
     document.getElementById('heading').innerHTML = strHeading;
     document.getElementById('psalm').innerHTML = strScripture;
 };
 
-let wholePage = document.getElementsByTagName('body')[0];
-wholePage.addEventListener('click', newRandomPsalm);
-
+document.getElementById("random").addEventListener('click', newRandomPsalm);
+document.getElementById("choose").addEventListener('click', selectPsalm);
 
 
