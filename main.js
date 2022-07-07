@@ -2883,6 +2883,11 @@ document.getElementById('psalm').innerHTML = strScripture;
 const selectPsalm = () => {
     loadingImage();
     let psalms = randomPsalm(psalmsBulk)[1];
+    /*$(document).ready(function(){
+        $('#heading').val() = strHeading;
+        $('#psalm').val() = strScripture;
+        let selectedPsalmIndex = $('#choose').val();
+      });*/
     let selectedPsalmIndex = document.getElementById("choose").value;
     let lastIndex = () => {
         if(psalms.indexOf(psalms[selectedPsalmIndex])<10) {
@@ -2893,8 +2898,8 @@ const selectPsalm = () => {
     }
     strHeading = psalms[selectedPsalmIndex].slice(0, psalms[selectedPsalmIndex].indexOf(psalms.indexOf(psalms[selectedPsalmIndex]))+lastIndex());
     strScripture = psalms[selectedPsalmIndex].slice(psalms[selectedPsalmIndex].indexOf(psalms.indexOf(psalms[selectedPsalmIndex]))+lastIndex());
-    document.getElementById('heading').innerHTML = strHeading;
-    document.getElementById('psalm').innerHTML = strScripture;
+    document.getElementById('heading').innerHTML = strHeading;           
+    document.getElementById('psalm').innerHTML = strScripture;     
 }
 
 
@@ -2909,7 +2914,10 @@ let newRandomPsalm = () => {
     document.getElementById('psalm').innerHTML = strScripture;
 };
 
-document.getElementById("random").addEventListener('click', newRandomPsalm);
-document.getElementById("choose").addEventListener('click', selectPsalm);
+//document.getElementById("random").addEventListener('click', newRandomPsalm);
+//document.getElementById("choose").addEventListener('click', selectPsalm);
 
-
+$('document').ready(function(){
+    $('#random').on('click', newRandomPsalm);
+    $('#choose').on('click', selectPsalm)
+})
