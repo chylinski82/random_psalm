@@ -59,7 +59,6 @@ const selectPsalm = () => {
     strScripture = psalms[selectedPsalmIndex].slice(psalms[selectedPsalmIndex].indexOf(psalms.indexOf(psalms[selectedPsalmIndex]))+lastIndex());
     document.getElementById('heading').innerHTML = strHeading;           
     document.getElementById('psalm').innerHTML = strScripture;     
-    window.alert(strHeading);
 }
 
 
@@ -78,5 +77,5 @@ let newRandomPsalm = () => {
 
 $('document').ready(function(){
     $('#random').on('click', newRandomPsalm);
-    $('#choose').on('click', selectPsalm); 
+    $('#choose').on('change', selectPsalm); 
 })
