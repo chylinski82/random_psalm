@@ -59,7 +59,7 @@ const selectPsalm = () => {
     strScripture = psalms[selectedPsalmIndex].slice(psalms[selectedPsalmIndex].indexOf(psalms.indexOf(psalms[selectedPsalmIndex]))+lastIndex());
     document.getElementById('heading').innerHTML = strHeading;           
     document.getElementById('psalm').innerHTML = strScripture;     
-    window.focus();
+    alert(strHeading);
 }
 
 
