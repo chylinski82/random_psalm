@@ -76,8 +76,6 @@ let newRandomPsalm = () => {
 //document.getElementById("choose").addEventListener('click', selectPsalm);
 
 $('document').ready(function(){
-    $('#random').on('tap', newRandomPsalm);
     $('#random').on('click', newRandomPsalm);
-    $('#choose').on('tap', selectPsalm);
-    $('#choose').on('click', selectPsalm); 
+    $('#choose').on('mouseup', selectPsalm); 
 })
